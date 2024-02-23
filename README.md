@@ -3,7 +3,10 @@ Este proyecto es una aplicación que realiza operaciones de conjuntos y visualiz
 
 ## Ventana principal
 
-![Ventana principal](https://github.com/Juankart65/Set-operations/assets/104481229/87f83849-56c7-4214-a8f4-d13832036d1a)
+![Ventana principal para 2 conjuntos](https://github.com/Juankart65/Set-operations/assets/104481229/f6701d05-6042-403e-b6f2-54f07b2175dc)
+![Ventana principal para 3 conjuntos](https://github.com/Juankart65/Set-operations/assets/104481229/dfcae352-dbb7-4135-8c8b-9ed4a201590e)
+
+
 
 
 ## Diagramas de Venn para 2 conjuntos
