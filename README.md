@@ -1,4 +1,5 @@
 # Set Operations
+Este proyecto es una aplicación que realiza operaciones de conjuntos y visualiza los resultados mediante diagramas de Venn. Puedes realizar operaciones con dos o tres conjuntos, explorar las intersecciones, uniones y diferencias, y obtener representaciones visuales claras de los resultados.
 
 ## Ventana principal
 
