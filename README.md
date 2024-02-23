@@ -16,5 +16,3 @@ Este proyecto es una aplicación que realiza operaciones de conjuntos y visualiz
 
 ## Diagramas de Venn para 3 conjuntos
 ![Diagrama de Venn para 3 conjuntos](https://github.com/Juankart65/Set-operations/assets/104481229/cbd8b984-97e6-4281-a67b-a0ec16995867)
-
-
