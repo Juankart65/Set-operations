@@ -28,7 +28,7 @@ def mostrar_venn2(conjunto_a, conjunto_b, resultado):
         area_110.set_label(', '.join(interseccion(conjunto_a, conjunto_b)))
 
         # Agregar leyenda
-        plt.legend()
+        plt.legend(loc="lower left", bbox_to_anchor=(1.5, 0), title="Valores")
     else:
         axes.set_title('Operación no válida')
 
@@ -38,6 +38,8 @@ def mostrar_venn2(conjunto_a, conjunto_b, resultado):
     canvas = FigureCanvasTkAgg(fig, master=ventana)
     canvas_widget = canvas.get_tk_widget()
     canvas_widget.grid(row=8, column=0, columnspan=2, pady=10)
+
+    ventana.update_idletasks()  # Actualizar la ventana después de mostrar el gráfico
 
 def mostrar_venn3(conjunto_a, conjunto_b, conjunto_c, resultado):
     plt.clf()  # Limpiar el gráfico anterior
@@ -60,16 +62,24 @@ def mostrar_venn3(conjunto_a, conjunto_b, conjunto_c, resultado):
         area_111 = venn_diagram.get_patch_by_id('111')
 
         # Etiquetar las áreas con los elementos
-        area_100.set_label(', '.join(diferencia3(conjunto_a, conjunto_b, conjunto_c)))
-        area_010.set_label(', '.join(diferencia3(conjunto_a, conjunto_b, conjunto_c)))
-        area_001.set_label(', '.join(diferencia3(conjunto_a, conjunto_b, conjunto_c)))
-        area_110.set_label(', '.join(interseccion3(conjunto_a, conjunto_b, conjunto_c)))
-        area_101.set_label(', '.join(interseccion3(conjunto_a, conjunto_b, conjunto_c)))
-        area_011.set_label(', '.join(interseccion3(conjunto_a, conjunto_b, conjunto_c)))
-        area_111.set_label(', '.join(union3(conjunto_a, conjunto_b, conjunto_c)))
+        if area_100 is not None:
+            area_100.set_label(', '.join(diferencia3(conjunto_a, conjunto_b, conjunto_c)))
+        if area_010 is not None:
+            area_010.set_label(', '.join(diferencia3(conjunto_a, conjunto_b, conjunto_c)))
+        if area_001 is not None:
+            area_001.set_label(', '.join(diferencia3(conjunto_a, conjunto_b, conjunto_c)))
+        if area_110 is not None:
+            area_110.set_label(', '.join(interseccion3(conjunto_a, conjunto_b, conjunto_c)))
+        if area_101 is not None:
+            area_101.set_label(', '.join(interseccion3(conjunto_a, conjunto_b, conjunto_c)))
+        if area_011 is not None:
+            area_011.set_label(', '.join(interseccion3(conjunto_a, conjunto_b, conjunto_c)))
+        if area_111 is not None:
+            area_111.set_label(', '.join(union3(conjunto_a, conjunto_b, conjunto_c)))
+
 
         # Agregar leyenda
-        plt.legend()
+        plt.legend(loc="lower left", bbox_to_anchor=(1.5, 0), title="Valores")
     else:
         axes.set_title('Operación no válida')
 
@@ -79,6 +89,9 @@ def mostrar_venn3(conjunto_a, conjunto_b, conjunto_c, resultado):
     canvas = FigureCanvasTkAgg(fig, master=ventana)
     canvas_widget = canvas.get_tk_widget()
     canvas_widget.grid(row=8, column=0, columnspan=2, pady=10)
+
+    ventana.update_idletasks()  # Actualizar la ventana después de mostrar el gráfico
+  
 
 # Crear la interfaz gráfica
 ventana = tk.Tk()

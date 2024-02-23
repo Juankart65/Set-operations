@@ -50,9 +50,9 @@ def diferencia3(conjunto1, conjunto2, conjunto3):
             resultado.append(elemento)
     return resultado
 
-def complemento3(universo, conjunto1, conjunto2, conjunto3):
+def complemento3(universo, conjunto1):
     resultado = []
     for elemento in universo:
-        if elemento not in conjunto1 and elemento not in conjunto2 and elemento not in conjunto3:
+        if elemento not in conjunto1:
             resultado.append(elemento)
     return resultado
