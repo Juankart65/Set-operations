@@ -16,16 +16,23 @@ def mostrar_venn2(conjunto_a, conjunto_b, resultado):
     if len(resultado) > 0:
         venn_diagram = venn2([conjunto_a, conjunto_b], set_labels=('A', 'B'), ax=axes)
         axes.set_title(f'Resultado: {resultado}')
-
         # Obtener los objetos de las áreas
         area_100 = venn_diagram.get_patch_by_id('100')
         area_010 = venn_diagram.get_patch_by_id('010')
         area_110 = venn_diagram.get_patch_by_id('110')
 
-        # Etiquetar las áreas con los elementos
-        area_100.set_label(', '.join(diferencia(conjunto_a, conjunto_b)))
-        area_010.set_label(', '.join(diferencia(conjunto_b, conjunto_a)))
-        area_110.set_label(', '.join(interseccion(conjunto_a, conjunto_b)))
+        # Verificar si los objetos de área son válidos
+        if area_100 is not None:
+            label_100 = ', '.join(diferencia(conjunto_a, conjunto_b))
+            area_100.set_label(label_100 if label_100 else 'No elements')
+
+        if area_010 is not None:
+            label_010 = ', '.join(diferencia(conjunto_b, conjunto_a))
+            area_010.set_label(label_010 if label_010 else 'No elements')
+
+        if area_110 is not None:
+            label_110 = ', '.join(interseccion(conjunto_a, conjunto_b))
+            area_110.set_label(label_110 if label_110 else 'No elements')
 
         # Agregar leyenda
         plt.legend(loc="lower left", bbox_to_anchor=(1.5, 0), title="Valores")
